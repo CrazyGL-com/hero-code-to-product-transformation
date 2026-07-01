@@ -3,7 +3,7 @@ name: code-to-product-transformation
 description: "A panel of live syntax-highlighted source code dissolves into a stream of glowing character particles that stream across the canvas and reassemble into a polished product UI screenshot. A continuous 'code becomes product' loop for developer-tool and SaaS landing pages."
 metadata:
   author: "@ybouane"
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 ## How To Use This Skill

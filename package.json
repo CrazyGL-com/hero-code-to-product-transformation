@@ -1,7 +1,7 @@
 {
 	"name": "@crazygl/hero-code-to-product-transformation",
-	"version": "0.1.0",
-	"description": "Code to Product Transformation Hero — a panel of live syntax-highlighted source code dissolves into a stream of glowing character particles that drift across the canvas and reassemble into a polished product UI screenshot. A continuous, magical 'code becomes product' loop for developer-tool and SaaS landing pages.",
+	"version": "0.1.1",
+	"description": "Code to Product Transformation — A panel of live syntax-highlighted source code dissolves into a stream of glowing character particles that stream across the canvas and reassemble into a polished product UI screenshot.… A customizable CrazyGL animated hero section — WebGL, React, drop-in.",
 	"type": "module",
 	"main": "./dist/index.js",
 	"module": "./dist/index.js",
@@ -21,7 +21,7 @@
 		"LICENSE"
 	],
 	"dependencies": {
-		"@crazygl/core": "^0.1.0"
+		"@crazygl/core": "^0.1.1"
 	},
 	"peerDependencies": {
 		"react": ">=18",
@@ -36,5 +36,32 @@
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"keywords": [
+		"developer-tools",
+		"saas",
+		"code",
+		"particles",
+		"webgl",
+		"transformation",
+		"dashboard",
+		"interactive",
+		"syntax",
+		"ai",
+		"code-to-product-transformation",
+		"crazygl",
+		"hero",
+		"hero-section",
+		"react",
+		"animation",
+		"ui",
+		"landing-page",
+		"frontend",
+		"component",
+		"canvas",
+		"three"
+	],
+	"bugs": {
+		"url": "https://github.com/crazygl-com/hero-code-to-product-transformation/issues"
 	}
 }
