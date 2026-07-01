@@ -1,0 +1,40 @@
+{
+	"name": "@crazygl/hero-code-to-product-transformation",
+	"version": "0.1.0",
+	"description": "Code to Product Transformation Hero — a panel of live syntax-highlighted source code dissolves into a stream of glowing character particles that drift across the canvas and reassemble into a polished product UI screenshot. A continuous, magical 'code becomes product' loop for developer-tool and SaaS landing pages.",
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.js"
+		},
+		"./metadata.json": "./metadata.json",
+		"./style.css": "./style.css"
+	},
+	"files": [
+		"dist",
+		"metadata.json",
+		"style.css",
+		"LICENSE"
+	],
+	"dependencies": {
+		"@crazygl/core": "^0.1.0"
+	},
+	"peerDependencies": {
+		"react": ">=18",
+		"react-dom": ">=18"
+	},
+	"license": "Apache-2.0",
+	"author": "ybouane",
+	"homepage": "https://crazygl.com/hero/code-to-product-transformation",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/crazygl-com/hero-code-to-product-transformation.git"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

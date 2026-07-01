@@ -1,0 +1,474 @@
+{
+	"name": "Code to Product Transformation",
+	"slug": "code-to-product-transformation",
+	"version": 1,
+	"description": "A panel of live syntax-highlighted source code dissolves into a stream of glowing character particles that stream across the canvas and reassemble into a polished product UI screenshot. A continuous 'code becomes product' loop for developer-tool and SaaS landing pages.",
+	"dependencies": [],
+	"authorName": "@ybouane",
+	"authorUrl": "https://x.com/ybouane",
+	"tags": [
+		"developer-tools",
+		"saas",
+		"code",
+		"particles",
+		"webgl",
+		"transformation",
+		"dashboard",
+		"interactive",
+		"syntax",
+		"ai"
+	],
+	"category": "Product",
+	"featured": true,
+	"dateCreated": 1779580800000,
+	"poster": "/images/heroes/code-to-product-transformation.png",
+	"install": {
+		"package": "@crazygl/hero-code-to-product-transformation"
+	},
+	"config": {
+		"managedWidth": true,
+		"innerWidth": 1280,
+		"managedHeight": true,
+		"defaultHeight": 720,
+		"styleInheritance": "none",
+		"usesCanvas": true,
+		"usesWebGL": true,
+		"usesThree": false,
+		"pointerTracking": true,
+		"resizeTracking": true,
+		"interactive": true,
+		"supportsImages": true,
+		"supportsTransparency": true,
+		"supportsFontCustomization": true,
+		"interactivityModes": [
+			"pointer",
+			"none"
+		],
+		"interactivity": "pointer"
+	},
+	"customizer": {
+		"sections": [
+			{
+				"label": "Content",
+				"fields": [
+					{
+						"id": "contentType",
+						"label": "Content Type",
+						"type": "select",
+						"default": "heading",
+						"options": [
+							{
+								"label": "Heading",
+								"value": "heading"
+							},
+							{
+								"label": "Two Columns",
+								"value": "two-columns"
+							},
+							{
+								"label": "Custom",
+								"value": "custom"
+							}
+						]
+					},
+					{
+						"id": "heading",
+						"label": "Heading",
+						"type": "text",
+						"default": "From a single line of code to a finished product.",
+						"showWhen": {
+							"contentType": "heading"
+						}
+					},
+					{
+						"id": "subheading",
+						"label": "Subheading",
+						"type": "textarea",
+						"default": "Watch your source materialise into the UI your users will love. Real components, real syntax \u2014 no mockups, no detours.",
+						"showWhen": {
+							"contentType": "heading"
+						}
+					},
+					{
+						"id": "column1",
+						"label": "Column 1",
+						"type": "node",
+						"default": "<h2>Ship the idea, not the boilerplate</h2><p>Source becomes interface in seconds, not sprints.</p>",
+						"showWhen": {
+							"contentType": "two-columns"
+						}
+					},
+					{
+						"id": "column2",
+						"label": "Column 2",
+						"type": "node",
+						"default": "<h2>Type-safe, by design</h2><p>Every transformation respects your data model.</p>",
+						"showWhen": {
+							"contentType": "two-columns"
+						}
+					},
+					{
+						"id": "content",
+						"label": "Content",
+						"type": "node",
+						"default": "<h1>Code, materialised.</h1>",
+						"showWhen": {
+							"contentType": "custom"
+						}
+					}
+				]
+			},
+			{
+				"label": "CTA",
+				"fields": [
+					{
+						"id": "ctaLabel",
+						"label": "CTA label",
+						"type": "text",
+						"default": "Start building",
+						"showWhen": {
+							"contentType": "heading"
+						}
+					},
+					{
+						"id": "onCTAClick",
+						"label": "On click",
+						"type": "text",
+						"default": "",
+						"showWhen": {
+							"contentType": "heading"
+						},
+						"description": "URL to navigate to when clicked. From code you can also pass a function \u2014 same prop name, type-detected at runtime."
+					},
+					{
+						"id": "ctaTextColor",
+						"label": "CTA text colour",
+						"type": "color",
+						"default": "#0b1024",
+						"showWhen": {
+							"contentType": "heading"
+						}
+					},
+					{
+						"id": "ctaBgColor",
+						"label": "CTA background",
+						"type": "color",
+						"default": "#7ee5ff",
+						"showWhen": {
+							"contentType": "heading"
+						}
+					}
+				]
+			},
+			{
+				"label": "Code Panel",
+				"fields": [
+					{
+						"id": "codeText",
+						"label": "Code",
+						"type": "textarea",
+						"default": "import { useUsers } from '@/hooks';\n\nexport function Dashboard() {\n  const { data, isLoading } = useUsers();\n\n  if (isLoading) return <Skeleton />;\n\n  return (\n    <Grid>\n      {data.map((user) => (\n        <Card key={user.id} user={user} />\n      ))}\n    </Grid>\n  );\n}",
+						"description": "The source displayed in the left panel. Real JSX / TS looks best. Each line is rendered with a lightweight syntax highlighter."
+					},
+					{
+						"id": "codeLanguage",
+						"label": "Language",
+						"type": "select",
+						"default": "tsx",
+						"options": [
+							{
+								"label": "TypeScript / TSX",
+								"value": "tsx"
+							},
+							{
+								"label": "JavaScript / JSX",
+								"value": "jsx"
+							},
+							{
+								"label": "TypeScript",
+								"value": "typescript"
+							},
+							{
+								"label": "JavaScript",
+								"value": "javascript"
+							},
+							{
+								"label": "Python",
+								"value": "python"
+							},
+							{
+								"label": "Go",
+								"value": "go"
+							},
+							{
+								"label": "Rust",
+								"value": "rust"
+							},
+							{
+								"label": "HTML",
+								"value": "html"
+							},
+							{
+								"label": "CSS",
+								"value": "css"
+							},
+							{
+								"label": "JSON",
+								"value": "json"
+							},
+							{
+								"label": "Bash",
+								"value": "bash"
+							},
+							{
+								"label": "Plain",
+								"value": "plain"
+							}
+						]
+					},
+					{
+						"id": "codePanelLabel",
+						"label": "Panel label",
+						"type": "text",
+						"default": "Dashboard.tsx",
+						"description": "Tiny filename badge at the top of the code panel."
+					},
+					{
+						"id": "codePanelTheme",
+						"label": "Code panel theme",
+						"type": "select",
+						"default": "midnight",
+						"options": [
+							{
+								"label": "Midnight",
+								"value": "midnight"
+							},
+							{
+								"label": "Dracula",
+								"value": "dracula"
+							},
+							{
+								"label": "One Dark",
+								"value": "one-dark"
+							},
+							{
+								"label": "Solarized Dark",
+								"value": "solarized-dark"
+							},
+							{
+								"label": "Solarized Light",
+								"value": "solarized-light"
+							},
+							{
+								"label": "GitHub Light",
+								"value": "github-light"
+							},
+							{
+								"label": "GitHub Dark",
+								"value": "github-dark"
+							}
+						],
+						"description": "Editor-style colour scheme for the code panel only. Independent of the overall hero accent palette below."
+					}
+				]
+			},
+			{
+				"label": "Product",
+				"fields": [
+					{
+						"id": "screenshot",
+						"label": "Product screenshot",
+						"type": "media",
+						"default": "https://crazygl.com/samples/screenshot-dashboard-light.avif",
+						"description": "PNG / JPG / WebP / AVIF \u2014 the rendered UI your code transforms into. Defaults to a dashboard sample."
+					},
+					{
+						"id": "productLabel",
+						"label": "Product badge",
+						"type": "text",
+						"default": "Live preview",
+						"description": "Pill badge on the left of the product chrome row. Empty string hides it."
+					},
+					{
+						"id": "productMetaText",
+						"label": "Product meta text",
+						"type": "text",
+						"default": "v1.0 \u00b7 production",
+						"description": "Small text on the right of the product chrome row (version / status / environment, etc.). Empty string hides it."
+					}
+				]
+			},
+			{
+				"label": "Transformation",
+				"fields": [
+					{
+						"id": "transformationSpeed",
+						"label": "Transformation speed",
+						"type": "slider",
+						"default": 0.72,
+						"min": 0.2,
+						"max": 3,
+						"step": 0.05,
+						"description": "How fast each particle travels from code to product. 0.7 is the relaxed default; push to 2+ for a faster, busier read."
+					},
+					{
+						"id": "particleDensity",
+						"label": "Particle density",
+						"type": "slider",
+						"default": 0.2,
+						"min": 0,
+						"max": 0.6,
+						"step": 0.02,
+						"description": "Relative number of particles streaming at once. 0.2 reads as a controlled stream; 0.6 is a heavy river."
+					},
+					{
+						"id": "particleSize",
+						"label": "Particle size",
+						"type": "slider",
+						"default": 0.55,
+						"min": 0.2,
+						"max": 1.4,
+						"step": 0.05,
+						"description": "Multiplier on the rendered particle radius. Small values keep individual characters readable; large values bloom into a glowing wash."
+					},
+					{
+						"id": "arcCurvature",
+						"label": "Arc curvature",
+						"type": "slider",
+						"default": 0.25,
+						"min": -0.6,
+						"max": 0.6,
+						"step": 0.01,
+						"description": "How much the stream arcs upward (positive) or downward (negative) between code and product. 0 is a perfectly horizontal river \u2014 particles flow flat with no lift or descent."
+					},
+					{
+						"id": "trailLength",
+						"label": "Trail length",
+						"type": "slider",
+						"default": 0.34,
+						"min": 0,
+						"max": 1,
+						"step": 0.02,
+						"description": "Persistence of the glowing trail behind each particle. 0 = no trail; 1 = long comet streaks."
+					},
+					{
+						"id": "pointerInfluence",
+						"label": "Pointer influence",
+						"type": "slider",
+						"default": 1,
+						"min": 0,
+						"max": 2,
+						"step": 0.05,
+						"description": "How strongly the cursor swirls and pushes particles aside as it passes through the stream. 0 disables the interaction."
+					}
+				]
+			},
+			{
+				"label": "Theme",
+				"fields": [
+					{
+						"id": "colorTheme",
+						"label": "Theme",
+						"type": "select",
+						"default": "midnight",
+						"options": [
+							{
+								"label": "Midnight",
+								"value": "midnight"
+							},
+							{
+								"label": "Daylight",
+								"value": "daylight"
+							},
+							{
+								"label": "Aurora",
+								"value": "aurora"
+							},
+							{
+								"label": "Citrus",
+								"value": "citrus"
+							},
+							{
+								"label": "Custom",
+								"value": "custom"
+							}
+						],
+						"description": "Curated palette presets. Switch to 'Custom' to override individual hues below."
+					},
+					{
+						"id": "accentPrimary",
+						"label": "Accent \u00b7 primary",
+						"type": "color",
+						"default": "#7ee5ff",
+						"showWhen": {
+							"colorTheme": "custom"
+						}
+					},
+					{
+						"id": "accentSecondary",
+						"label": "Accent \u00b7 secondary",
+						"type": "color",
+						"default": "#a995ff",
+						"showWhen": {
+							"colorTheme": "custom"
+						}
+					},
+					{
+						"id": "accentTertiary",
+						"label": "Accent \u00b7 tertiary",
+						"type": "color",
+						"default": "#ffb478",
+						"showWhen": {
+							"colorTheme": "custom"
+						}
+					},
+					{
+						"id": "codePanelTint",
+						"label": "Code panel tint",
+						"type": "color",
+						"default": "#0d1226",
+						"showWhen": {
+							"colorTheme": "custom"
+						}
+					}
+				]
+			},
+			{
+				"label": "Background",
+				"fields": [
+					{
+						"id": "transparentBackground",
+						"label": "Transparent background",
+						"type": "toggle",
+						"default": false,
+						"description": "Drop the deep gradient backdrop so the hero composites cleanly on top of your own page background."
+					},
+					{
+						"id": "bgColor",
+						"label": "Background",
+						"type": "color",
+						"default": "#070918",
+						"showWhen": {
+							"transparentBackground": false
+						},
+						"description": "Deep base colour painted behind the two panels."
+					}
+				]
+			},
+			{
+				"label": "Typography",
+				"fields": [
+					{
+						"id": "headingFontFamily",
+						"label": "Heading Font",
+						"type": "font",
+						"default": "Inherit",
+						"showWhen": {
+							"contentType": "heading"
+						}
+					}
+				]
+			}
+		]
+	}
+}
